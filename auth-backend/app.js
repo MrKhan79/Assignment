@@ -3,6 +3,7 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -10,6 +11,12 @@ const PORT = process.env.PORT || 8000;
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, '../auth-frontend/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../auth-frontend/build/index.html'));
+});
 
 const User = require("./models/User");
 
@@ -52,3 +59,4 @@ app.post("/", async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+
