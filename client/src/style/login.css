@@ -61,6 +61,13 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    
+
+  }
+  @media screen and (min-width: 1025px ) {
+   .sign-in__wrapper{
+    height: 130vh;
+   }
   }
   
   .sign-in__backdrop {
