@@ -1,0 +1,86 @@
+
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    width: 80%;
+    font-family: 'Abel', sans-serif;
+    
+
+}
+.home:hover{
+}
+
+.cards:hover{
+transform: scale(1.5rem) !important;
+border: solid 1px #27E1C1;
+
+}
+
+.card_link:hover{
+  font-size: 1.2rem
+}
+
+.card_link{
+  transition: .2s ease-in-out 0s !important;
+
+}
+
+
+.cards{
+ box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+ transition: 0.1s !important;
+ color: red;
+}
+
+
+.srch-btn:hover{
+color: black !important;
+background-color: #27E1C1 !important;
+border-color: #27E1C1 !important;
+}
+
+.sort{
+  background-color: #27E1C1 !important;
+  border-color: #27E1C1 !important;
+  color: black !important;
+  margin-right: .5rem !important;
+}
+
+
+.my-table{
+    color: black;
+    font-size: 20px;
+    width: 80%;
+    background-color: #F5F5F5;
+    margin: auto;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    border-spacing: 100px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
+
+.card{
+  margin: 2rem 2rem;
+  padding-top: .5rem;
+}
+
+
+th, td {
+    padding: 20px;
+    background-color: ;
+  }
+
+  tr:nth-child(even) {
+    background-color: #C4DFDF;
+    color: black;
+  }
+  tr:hover {
+    transform: scale(1.02);
+  }

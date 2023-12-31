@@ -6,32 +6,47 @@ import axios from "axios";
 
 const Login = () => {
   const history = useNavigate();
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [show, setEhow] = useState(false);
   const [loading, setEoading] = useState(false);
 
   useEffect(() => {
     if (localStorage.getItem("jwt")) {
-      history("/home", { state: { id: username } });
+      history("/home", { state: { id: email } });
     }
-  });
+
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:8000/users"); // Update the URL with your server's URL
+        console.log(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error.message);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setEoading(true);
-    console.log(username, password);
+    console.log(email, password);
 
     try {
       await axios
         .post("http://localhost:8000/", {
-          username,
+          email,
           password,
         })
         .then((res) => {
           if (res.data.token) {
             const name = res.data.name
             localStorage.setItem("jwt", res.data.token);
+            localStorage.setItem("user", res.data.name);
+
             setEoading(false);
             history("/home", { state: { id: "Welcome back, " + name } });
           } else if (!res.data.token) {
@@ -82,13 +97,13 @@ const Login = () => {
             onClose={() => setEhow(false)}
             dismissible
           >
-            Incorrect username or password.
+            Incorrect email or password.
           </Alert>
         ) : (
           <div />
         )}
 
-        <Form.Group className="mb-2" controlId="username">
+        <Form.Group className="mb-2" controlId="email">
           <div
             class="input-group input-group mb-3"
             style={{ border: "none", backgroundColor: "grey" }}
@@ -115,9 +130,9 @@ const Login = () => {
               class="form-control"
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-sm"
-              value={username}
-              placeholder="username"
-              onChange={(e) => setUsername(e.target.value)}
+              value={email}
+              placeholder="email"
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
