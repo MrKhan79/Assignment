@@ -63,11 +63,20 @@
     position: relative;
     
 
+
+
+  
   }
-  @media screen and (min-width: 1025px ) {
-   .sign-in__wrapper{
-    height: 130vh;
-   }
+  @media screen and (min-width: 1400px) {
+    .sign-in__wrapper{
+      height: 130vh;
+     }
+    }
+
+  @media screen and (min-width: 1900px) {
+    .sign-in__wrapper{
+      height: 100vh;
+     }
   }
   
   .sign-in__backdrop {
