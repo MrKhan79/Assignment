@@ -24,7 +24,7 @@ const Home = (props) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/users?sort=${sort}&search=${searchTerm}`
+          `https://assignment007-ybu8.onrender.com/users?sort=${sort}&search=${searchTerm}`
         ); // Update the URL with your server's URL
         setData(response.data);
         setLength(response.data.length);

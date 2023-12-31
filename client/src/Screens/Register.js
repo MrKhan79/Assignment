@@ -29,7 +29,7 @@ const Register = () => {
 
     try {
       await axios
-        .post("http://localhost:8000/signup", {
+        .post("https://assignment007-ybu8.onrender.com/signup", {
           email,
           password,
           name,
@@ -44,7 +44,7 @@ const Register = () => {
             alert(res.data.error);
           } else {
             await axios
-              .post("http://localhost:8000/", {
+              .post("https://assignment007-ybu8.onrender.com/", {
                 email,
                 password,
               })

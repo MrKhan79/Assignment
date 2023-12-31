@@ -27,7 +27,7 @@ const Cards = ({data}) => {
         console.log(userId)
         if (shouldDelete) {
           try {
-            await axios.delete(`http://localhost:8000/users/${userId}`);
+            await axios.delete(`https://assignment007-ybu8.onrender.com/users/${userId}`);
           } catch (error) {
             console.error('Error deleting user:', error.message);
           }

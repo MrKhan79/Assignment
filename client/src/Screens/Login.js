@@ -18,7 +18,7 @@ const Login = () => {
 
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/users"); // Update the URL with your server's URL
+        const response = await axios.get("https://assignment007-ybu8.onrender.com/users"); // Update the URL with your server's URL
         console.log(response.data);
       } catch (error) {
         console.error('Error fetching data:', error.message);
@@ -37,7 +37,7 @@ const Login = () => {
 
     try {
       await axios
-        .post("http://localhost:8000/", {
+        .post("https://assignment007-ybu8.onrender.com/", {
           email,
           password,
         })

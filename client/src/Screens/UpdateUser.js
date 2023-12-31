@@ -21,7 +21,7 @@ const Register = () => {
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/users/${userId}`);
+        const response = await axios.get(`https://assignment007-ybu8.onrender.com/users/${userId}`);
         user = response.data;
 
         setEditFormData({
@@ -46,7 +46,7 @@ const Register = () => {
   const handleUpdate = async (e) => {
     e.preventDefault()
     try {
-      await axios.put(`http://localhost:8000/users/${userId}`, editFormData);
+      await axios.put(`https://assignment007-ybu8.onrender.com/users/${userId}`, editFormData);
       console.log("Successfull")
       history('/home');
     } catch (error) {
